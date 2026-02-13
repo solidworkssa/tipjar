@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'TipJar - Creator Tipping',
-  description: 'Tip creators with messages on Base and Stacks',
+  title: 'TipJar',
+  description: 'Direct tipping for creators',
 }
 
 export default function RootLayout({
