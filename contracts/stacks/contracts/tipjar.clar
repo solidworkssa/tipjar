@@ -20,10 +20,10 @@
 
 (define-public (tip (recipient principal) (amount uint) (message (string-utf8 256)))
     (begin
-        (try! (stx-transfer? amount tx-sender recipient))
+        (try! (stx-transfer? amount contract-caller recipient))
         (map-set total-received recipient 
             (+ (default-to u0 (map-get? total-received recipient)) amount))
-        (print {event: "tip_received", from: tx-sender, to: recipient, amount: amount, message: message})
+        (print {event: "tip_received", from: contract-caller, to: recipient, amount: amount, message: message})
         (ok true)
     )
 )
